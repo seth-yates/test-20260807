@@ -6,13 +6,17 @@
 <title>Fresno City College — Student Support Resources</title>
 <style>
   :root{
-    --fcc-blue:#003057;
-    --fcc-gold:#c8a951;
-    --bg:#f5f6f8;
+    --fcc-red:#A80000;
+    --fcc-red-dark:#8D191B;
+    --fcc-black:#1E1E1E;
+    --fcc-charcoal:#333333;
+    --fcc-gray:#58595B;
+    --fcc-lightgray:#DDDEE0;
+    --bg:#f7f6f6;
     --card-bg:#ffffff;
-    --text:#1e2733;
-    --muted:#5a6472;
-    --border:#e1e4e9;
+    --text:#1E1E1E;
+    --muted:#58595B;
+    --border:#DDDEE0;
   }
   *{box-sizing:border-box;}
   body{
@@ -23,7 +27,7 @@
     line-height:1.5;
   }
   header{
-    background:linear-gradient(135deg,var(--fcc-blue),#00223d);
+    background:linear-gradient(135deg,var(--fcc-red-dark),var(--fcc-black));
     color:#fff;
     padding:2.5rem 1.5rem 2rem;
     text-align:center;
@@ -35,24 +39,74 @@
   header p{
     margin:0 auto;
     max-width:700px;
-    color:#dbe4ee;
+    color:var(--fcc-lightgray);
     font-size:1.05rem;
+  }
+  .quick-buttons{
+    max-width:1000px;
+    margin:-1.5rem auto 2rem;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+    position:relative;
+    z-index:2;
+    padding:0 1.5rem;
+  }
+  .quick-btn{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    text-decoration:none;
+    background:var(--card-bg);
+    border:3px solid var(--fcc-red);
+    border-radius:12px;
+    padding:1.25rem 1rem;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .quick-btn .icon{
+    font-size:1.8rem;
+    margin-bottom:0.4rem;
+  }
+  .quick-btn .label{
+    font-weight:700;
+    color:var(--fcc-red);
+    font-size:1.05rem;
+    line-height:1.25;
+  }
+  .quick-btn .sub{
+    font-size:0.8rem;
+    color:var(--muted);
+    margin-top:0.3rem;
+  }
+  .quick-btn:hover{
+    background:var(--fcc-red);
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(168,0,0,0.35);
+  }
+  .quick-btn:hover .label, .quick-btn:hover .sub{
+    color:#fff;
+  }
+  @media (max-width:700px){
+    .quick-buttons{grid-template-columns:1fr;}
   }
   .basic-needs-cta{
     max-width:800px;
     margin:-1.5rem auto 2rem;
     background:var(--card-bg);
-    border:3px solid var(--fcc-gold);
+    border:3px solid var(--fcc-black);
     border-radius:14px;
     padding:1.75rem 1.5rem;
     text-align:center;
-    box-shadow:0 8px 24px rgba(0,48,87,0.18);
+    box-shadow:0 8px 24px rgba(30,30,30,0.18);
     position:relative;
     z-index:2;
   }
   .basic-needs-cta h2{
     margin:0 0 0.5rem;
-    color:var(--fcc-blue);
+    color:var(--fcc-red);
     font-size:1.4rem;
   }
   .basic-needs-cta p{
@@ -62,7 +116,7 @@
   }
   .cta-button{
     display:inline-block;
-    background:var(--fcc-blue);
+    background:var(--fcc-red);
     color:#fff;
     text-decoration:none;
     font-weight:700;
@@ -70,10 +124,10 @@
     padding:0.9rem 1.8rem;
     border-radius:8px;
     transition:transform 0.15s ease, background 0.15s ease;
-    box-shadow:0 4px 10px rgba(0,48,87,0.3);
+    box-shadow:0 4px 10px rgba(168,0,0,0.35);
   }
   .cta-button:hover{
-    background:#00457e;
+    background:var(--fcc-red-dark);
     transform:translateY(-2px);
   }
   .cta-note{
@@ -99,8 +153,8 @@
     margin-bottom:2.75rem;
   }
   section.category > h2{
-    color:var(--fcc-blue);
-    border-bottom:3px solid var(--fcc-gold);
+    color:var(--fcc-red);
+    border-bottom:3px solid var(--fcc-black);
     padding-bottom:0.5rem;
     font-size:1.5rem;
     margin-bottom:0.3rem;
@@ -129,7 +183,7 @@
   }
   .card a.title-link{
     font-weight:700;
-    color:var(--fcc-blue);
+    color:var(--fcc-red);
     text-decoration:none;
     font-size:1.02rem;
     display:inline-block;
@@ -160,12 +214,12 @@
     font-size:0.85rem;
     border-top:1px solid var(--border);
   }
-  footer a{color:var(--fcc-blue);}
+  footer a{color:var(--fcc-red);}
   .back-to-top{
     position:fixed;
     bottom:1.5rem;
     right:1.5rem;
-    background:var(--fcc-blue);
+    background:var(--fcc-red);
     color:#fff;
     border:none;
     border-radius:50%;
@@ -185,10 +239,27 @@
   <p>A single starting point for academic, technology, and life/basic-needs support available to FCC students.</p>
 </header>
 
+<div class="quick-buttons">
+  <a class="quick-btn" href="https://scccd.az1.qualtrics.com/jfe/form/SV_cHo9edbthdFx8QC" target="_blank" rel="noopener">
+    <span class="icon">🏠</span>
+    <span class="label">Basic Needs Support Request Form</span>
+    <span class="sub">Food · Housing · Finances · More</span>
+  </a>
+  <a class="quick-btn" href="https://sites.google.com/view/fcc-tutorial-services/fcc-tutorial-services-home" target="_blank" rel="noopener">
+    <span class="icon">📚</span>
+    <span class="label">Tutorial Services</span>
+    <span class="sub">Free Tutoring &amp; Study Help</span>
+  </a>
+  <a class="quick-btn" href="https://www.fresnocitycollege.edu/campus-life/technology/index.html" target="_blank" rel="noopener">
+    <span class="icon">💻</span>
+    <span class="label">Technology Support</span>
+    <span class="sub">Devices, Wi-Fi &amp; Tech Help</span>
+  </a>
+</div>
+
 <div class="basic-needs-cta">
   <h2>🟡 Start Here: Need Help With Food, Housing, or Basic Needs?</h2>
-  <p>Before browsing the resources below, we strongly encourage every student who is struggling with food, housing, transportation, childcare, finances, or other basic needs to fill out the <strong>Basic Needs Student Support Request Form</strong>. A Basic Needs Counselor will personally reach out to connect you with the right help — often within 2 business days.</p>
-  <a class="cta-button" href="https://scccd.az1.qualtrics.com/jfe/form/SV_cHo9edbthdFx8QC" target="_blank" rel="noopener">Fill Out the Basic Needs Support Request Form</a>
+  <p>Before browsing the resources below, we strongly encourage every student who is struggling with food, housing, transportation, childcare, finances, or other basic needs to fill out the <strong>Basic Needs Student Support Request Form</strong> above. A Basic Needs Counselor will personally reach out to connect you with the right help — often within 2 business days.</p>
   <div class="cta-note">Located in Student Center Room 216 · Mon–Fri, 8am–5pm · basicneeds@fresnocitycollege.edu · (559) 442-8299<br>
   Learn more on the <a href="https://www.fresnocitycollege.edu/student-services/basic-needs/index.html" target="_blank" rel="noopener">Basic Needs Resources page</a>.</div>
 </div>
@@ -296,6 +367,10 @@
       <div class="card">
         <a class="title-link" href="https://www.fresnocitycollege.edu/academics/tutoring/index.html" target="_blank" rel="noopener">Tutoring Options</a>
         <p>Free tutoring services across subjects, including drop-in and appointment-based tutoring on campus and online.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://sites.google.com/view/fcc-tutorial-services/fcc-tutorial-services-home" target="_blank" rel="noopener">FCC Tutorial Services (Full Site)</a>
+        <p>Detailed schedules, subject-specific tutoring sign-ups, and contact info for FCC's Tutorial Services program.</p>
       </div>
       <div class="card">
         <a class="title-link" href="https://www.fresnocitycollege.edu/academics/library/index.html" target="_blank" rel="noopener">Library</a>
