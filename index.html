@@ -1,1 +1,426 @@
-Hello Wolf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresno City College — Student Support Resources</title>
+<style>
+  :root{
+    --fcc-blue:#003057;
+    --fcc-gold:#c8a951;
+    --bg:#f5f6f8;
+    --card-bg:#ffffff;
+    --text:#1e2733;
+    --muted:#5a6472;
+    --border:#e1e4e9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+  }
+  header{
+    background:linear-gradient(135deg,var(--fcc-blue),#00223d);
+    color:#fff;
+    padding:2.5rem 1.5rem 2rem;
+    text-align:center;
+  }
+  header h1{
+    margin:0 0 0.4rem;
+    font-size:2rem;
+  }
+  header p{
+    margin:0 auto;
+    max-width:700px;
+    color:#dbe4ee;
+    font-size:1.05rem;
+  }
+  .basic-needs-cta{
+    max-width:800px;
+    margin:-1.5rem auto 2rem;
+    background:var(--card-bg);
+    border:3px solid var(--fcc-gold);
+    border-radius:14px;
+    padding:1.75rem 1.5rem;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,48,87,0.18);
+    position:relative;
+    z-index:2;
+  }
+  .basic-needs-cta h2{
+    margin:0 0 0.5rem;
+    color:var(--fcc-blue);
+    font-size:1.4rem;
+  }
+  .basic-needs-cta p{
+    margin:0 0 1.1rem;
+    color:var(--muted);
+    font-size:1rem;
+  }
+  .cta-button{
+    display:inline-block;
+    background:var(--fcc-blue);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:1.1rem;
+    padding:0.9rem 1.8rem;
+    border-radius:8px;
+    transition:transform 0.15s ease, background 0.15s ease;
+    box-shadow:0 4px 10px rgba(0,48,87,0.3);
+  }
+  .cta-button:hover{
+    background:#00457e;
+    transform:translateY(-2px);
+  }
+  .cta-note{
+    margin-top:0.9rem;
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 1.5rem 3rem;
+  }
+  .intro-note{
+    background:#fff8e6;
+    border:1px solid #f0dca0;
+    border-radius:10px;
+    padding:1rem 1.25rem;
+    margin-bottom:2.5rem;
+    font-size:0.95rem;
+    color:#5a4a1a;
+  }
+  section.category{
+    margin-bottom:2.75rem;
+  }
+  section.category > h2{
+    color:var(--fcc-blue);
+    border-bottom:3px solid var(--fcc-gold);
+    padding-bottom:0.5rem;
+    font-size:1.5rem;
+    margin-bottom:0.3rem;
+  }
+  section.category > p.cat-desc{
+    color:var(--muted);
+    margin-top:0;
+    margin-bottom:1.25rem;
+    font-size:0.95rem;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:1rem;
+  }
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:1.1rem 1.2rem;
+    transition:box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover{
+    box-shadow:0 6px 16px rgba(0,0,0,0.08);
+    transform:translateY(-2px);
+  }
+  .card a.title-link{
+    font-weight:700;
+    color:var(--fcc-blue);
+    text-decoration:none;
+    font-size:1.02rem;
+    display:inline-block;
+    margin-bottom:0.4rem;
+  }
+  .card a.title-link:hover{
+    text-decoration:underline;
+  }
+  .card p{
+    margin:0;
+    font-size:0.9rem;
+    color:var(--muted);
+  }
+  .emergency-box{
+    background:#fdecec;
+    border:1px solid #f3b8b8;
+    border-radius:10px;
+    padding:1rem 1.25rem;
+    margin-bottom:2.5rem;
+    font-size:0.95rem;
+    color:#7a1f1f;
+  }
+  .emergency-box strong{color:#c0392b;}
+  footer{
+    text-align:center;
+    padding:2rem 1rem;
+    color:var(--muted);
+    font-size:0.85rem;
+    border-top:1px solid var(--border);
+  }
+  footer a{color:var(--fcc-blue);}
+  .back-to-top{
+    position:fixed;
+    bottom:1.5rem;
+    right:1.5rem;
+    background:var(--fcc-blue);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:46px;
+    height:46px;
+    font-size:1.2rem;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    display:none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Fresno City College Student Support Resources</h1>
+  <p>A single starting point for academic, technology, and life/basic-needs support available to FCC students.</p>
+</header>
+
+<div class="basic-needs-cta">
+  <h2>🟡 Start Here: Need Help With Food, Housing, or Basic Needs?</h2>
+  <p>Before browsing the resources below, we strongly encourage every student who is struggling with food, housing, transportation, childcare, finances, or other basic needs to fill out the <strong>Basic Needs Student Support Request Form</strong>. A Basic Needs Counselor will personally reach out to connect you with the right help — often within 2 business days.</p>
+  <a class="cta-button" href="https://scccd.az1.qualtrics.com/jfe/form/SV_cHo9edbthdFx8QC" target="_blank" rel="noopener">Fill Out the Basic Needs Support Request Form</a>
+  <div class="cta-note">Located in Student Center Room 216 · Mon–Fri, 8am–5pm · basicneeds@fresnocitycollege.edu · (559) 442-8299<br>
+  Learn more on the <a href="https://www.fresnocitycollege.edu/student-services/basic-needs/index.html" target="_blank" rel="noopener">Basic Needs Resources page</a>.</div>
+</div>
+
+<main>
+
+  <div class="emergency-box">
+    <strong>Emergency?</strong> Call 911 or Campus Police at (559) 244-5911.<br>
+    <strong>Need help after hours?</strong> Call <a href="https://www.uwfm.org/211-helpline/" target="_blank" rel="noopener">United Way 2-1-1</a> — a free, confidential, multilingual helpline open 24/7 for food, shelter, and other services.
+  </div>
+
+  <div class="intro-note">
+    The links below go directly to official Fresno City College (fresnocitycollege.edu) pages. Each card includes a short description of the services offered so you can quickly find what you need.
+  </div>
+
+  <!-- BASIC NEEDS / LIFE OUTSIDE SCHOOL -->
+  <section class="category">
+    <h2>🏠 Basic Needs &amp; Life Outside of School</h2>
+    <p class="cat-desc">Support for food, housing, health, childcare, transportation, and finances so you can focus on your education.</p>
+    <div class="grid">
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/index.html" target="_blank" rel="noopener">Basic Needs Resources (Main Hub)</a>
+        <p>Central hub connecting students to food, housing, finance, technology, and wellness support. Includes staff contacts and the support request form.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/food.html" target="_blank" rel="noopener">Food Resources</a>
+        <p>Information on on- and off-campus food resources, including the Ram Pantry and CalFresh assistance for students facing food insecurity.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/ram-pantry/index.html" target="_blank" rel="noopener">Ram Pantry</a>
+        <p>FCC's on-campus food pantry offering free groceries and hygiene items to enrolled students.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/food.html" target="_blank" rel="noopener">Food on Campus</a>
+        <p>Overview of dining and food options available on the FCC campus.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/housing.html" target="_blank" rel="noopener">Housing Resources</a>
+        <p>Referrals and information for students experiencing housing insecurity or homelessness, including emergency housing support.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/basic-needs-transportation.html" target="_blank" rel="noopener">Transportation Resources</a>
+        <p>Help with transportation needs, including bus pass information and shuttle resources for students commuting to campus.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/dependent-care.html" target="_blank" rel="noopener">Student Parents / Dependent (Child) Care</a>
+        <p>Resources for student parents, including childcare referrals and support for balancing school with dependent care.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/child-development-center/index.html" target="_blank" rel="noopener">Child Development Center</a>
+        <p>On-campus child care and early childhood education services for children of enrolled students.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/health-care.html" target="_blank" rel="noopener">Health &amp; Hygiene Resources</a>
+        <p>Connects students to health care, hygiene products, and medical/dental referral resources.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/mental-welllness.html" target="_blank" rel="noopener">Mental Wellness Resources</a>
+        <p>Information and referrals for mental health support and wellness services for students in crisis or need of ongoing care.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/health-and-wellness/index.html" target="_blank" rel="noopener">Health &amp; Wellness Center</a>
+        <p>Campus health services including counseling, wellness programming, and health education for students.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/finances.html" target="_blank" rel="noopener">Finance Help</a>
+        <p>Guidance and referrals for students needing financial assistance, budgeting help, or emergency funds.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/calworks/index.html" target="_blank" rel="noopener">CalWORKs</a>
+        <p>Support services for student parents receiving CalWORKs (welfare-to-work) benefits, including case management and job prep.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/programs/eops.html" target="_blank" rel="noopener">EOPS (Extended Opportunity Programs &amp; Services)</a>
+        <p>Extra academic and financial support for eligible students facing economic and educational disadvantages.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/veterans-resource-center/index.html" target="_blank" rel="noopener">Veterans Resource Center</a>
+        <p>Dedicated support for student veterans, including benefits assistance, counseling, and a campus community space.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/programs/dream-center.html" target="_blank" rel="noopener">Dream Center</a>
+        <p>Support services for undocumented and AB540/DACA students, including legal resource referrals and financial aid guidance.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/about/immigration-resources.html" target="_blank" rel="noopener">Immigration Resources</a>
+        <p>Campus-wide information and referrals related to immigration status, rights, and support services.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/international-students/index.html" target="_blank" rel="noopener">International Students Office</a>
+        <p>Visa, enrollment, and cultural support services specifically for international students studying at FCC.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC SUPPORT -->
+  <section class="category">
+    <h2>🎓 Academic Support</h2>
+    <p class="cat-desc">Help with classes, planning your education, tutoring, and academic success.</p>
+    <div class="grid">
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/academics/counseling/index.html" target="_blank" rel="noopener">Counseling Department</a>
+        <p>Academic, career, and personal counseling to help students choose classes, plan their education, and stay on track to graduate or transfer.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/academics/tutoring/index.html" target="_blank" rel="noopener">Tutoring Options</a>
+        <p>Free tutoring services across subjects, including drop-in and appointment-based tutoring on campus and online.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/academics/library/index.html" target="_blank" rel="noopener">Library</a>
+        <p>Research assistance, study spaces, book/media checkout, and access to databases and library staff support.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/academics/counseling/transfer-center/index.html" target="_blank" rel="noopener">Transfer Center</a>
+        <p>Guidance for students planning to transfer to a four-year university, including application help and university visits.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/admissions-aid/assessment-center" target="_blank" rel="noopener">Assessment Center</a>
+        <p>Placement testing and assessment services to help determine appropriate course levels for incoming students.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/disabled-students-program-and-services/index.html" target="_blank" rel="noopener">Disabled Students Programs &amp; Services (DSPS)</a>
+        <p>Academic accommodations and support services for students with documented disabilities.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/programs/leon-s-peters-honors.html" target="_blank" rel="noopener">Leon S. Peters Honors Program</a>
+        <p>An enriched academic program for high-achieving students, offering honors coursework and transfer advantages.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/admissions-aid/financial-aid-office/index.html" target="_blank" rel="noopener">Financial Aid Office</a>
+        <p>Help applying for grants, loans, work-study, and scholarships to fund your education.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/admissions-aid/scholarships/index.html" target="_blank" rel="noopener">Scholarships</a>
+        <p>Information on scholarship opportunities available to FCC students and how to apply.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/admissions-aid/admissions-and-records-office/index.html" target="_blank" rel="noopener">Admissions &amp; Records Office</a>
+        <p>Support with registration, enrollment verification, transcripts, and academic records.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/admissions-aid/admissions-and-records-office/admissions/new-student-services.html" target="_blank" rel="noopener">Welcome Center &amp; Outreach</a>
+        <p>Onboarding support for new students, including orientation and guidance through the enrollment process.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/events-and-places/ram-ready.html" target="_blank" rel="noopener">Ram Ready for New Students</a>
+        <p>A program designed to help new students prepare for college life and get connected to campus resources early.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/cec/index.html" target="_blank" rel="noopener">Career &amp; Employment Center</a>
+        <p>Career counseling, job search assistance, resume help, and employment resources for students.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY SUPPORT -->
+  <section class="category">
+    <h2>💻 Technology Support</h2>
+    <p class="cat-desc">Get help with devices, online tools, and internet access needed for coursework.</p>
+    <div class="grid">
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/technology/index.html" target="_blank" rel="noopener">Technology Help / Support Services</a>
+        <p>Technical support for students, including help with student email, online accounts, Canvas access, and general troubleshooting.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/basic-needs/basic-needs-technology.html" target="_blank" rel="noopener">Basic Needs: Technology Resources</a>
+        <p>Assistance for students who lack a computer, laptop, or reliable internet access needed to complete coursework.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/academics/online-learning/index.html" target="_blank" rel="noopener">Online Learning</a>
+        <p>Resources and support for students taking online or hybrid classes, including Canvas guidance and online readiness tools.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://myportal.scccd.edu/uPortal/Login?cccMisCode=571" target="_blank" rel="noopener">My Portal (Student Login)</a>
+        <p>Central student portal for registration, grades, financial aid status, and email access.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/campus-life/bookstore.html" target="_blank" rel="noopener">Bookstore</a>
+        <p>Purchase or rent textbooks and course materials, including digital access codes needed for classes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERAL / CAMPUS OFFICES -->
+  <section class="category">
+    <h2>📍 General Student Services &amp; Contacts</h2>
+    <p class="cat-desc">Other helpful campus offices and directories.</p>
+    <div class="grid">
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/index.html" target="_blank" rel="noopener">Student Services Office (Main Page)</a>
+        <p>Overview of all student services departments at FCC, with links to each individual support office.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/student-services/campus-offices.html" target="_blank" rel="noopener">Campus Offices Directory</a>
+        <p>A directory of campus offices, their locations, and contact information for quick reference.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/directory/index.html" target="_blank" rel="noopener">Faculty/Staff Directory</a>
+        <p>Search for contact information of specific faculty and staff members across campus.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/about/contact.html" target="_blank" rel="noopener">Contact &amp; Maps</a>
+        <p>General campus contact information and maps to help you find your way around FCC.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/about/title-ix/index.html" target="_blank" rel="noopener">Title IX Office</a>
+        <p>Support and reporting resources for students affected by sex discrimination, harassment, or sexual violence.</p>
+      </div>
+      <div class="card">
+        <a class="title-link" href="https://www.fresnocitycollege.edu/about/student-conduct-complaint-grievance/index.html" target="_blank" rel="noopener">Student Conduct, Complaint &amp; Grievance</a>
+        <p>Process for filing complaints or grievances and information about the student code of conduct.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<button class="back-to-top" id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
+
+<footer>
+  All links point to official Fresno City College or affiliated pages (fresnocitycollege.edu). Information current as of page creation — please verify details directly with each office, as programs and hours may change.<br><br>
+  Fresno City College · 1101 East University Ave, Fresno, CA 93741 · (559) 442-8200
+</footer>
+
+<script>
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  backBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+
+</body>
+</html>
+
